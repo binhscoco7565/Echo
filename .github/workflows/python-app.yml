@@ -28,3 +28,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Package app
+      run: |
+        python -m pyinstaller -w --uac-admin --hide-console hide-early main.py

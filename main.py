@@ -20,7 +20,8 @@ def is_admin():
 def main():
     # Defines options for window to open
 
-    if ctypes.windll.shell32.IsUserAnAdmin() == 0:
+    # Admin check using ctypes (Apparently not very secure...)
+    if ctypes.windll.shell32.IsUserAnAdmin() == 1:
         print('Running in admin')
         with dpg.window(label='Echo (admin)', no_resize=True, no_title_bar=False) as main_window:
             # Title & VERY BAD padding (like wtf is this)

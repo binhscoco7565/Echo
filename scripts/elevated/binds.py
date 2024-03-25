@@ -30,13 +30,13 @@ def binds():
 
     installed = check_installed()
 
-    with dpg.tree_node(label='Fetch and run suggested AHK binds'):
+    with dpg.tree_node(label='Fetch and run suggested AHK binds (For all users)'):
         with dpg.group(tag='binds_group'):
             dpg.add_text('Download Binds that help with faster typing & makes stuff looks nicer. A few binds include:',
                          wrap=0)
             dpg.add_text('dlt -> Δ', bullet=True)
             dpg.add_text('dgr -> °', bullet=True)
-            dpg.add_text('          ... plus many more binds')
+            dpg.add_text('          ... plus more')
             installed_text = dpg.add_text(f'Installed: {str(installed).lower()}')
             # Don't know why I'm doing this, logic doesn't make sense
             with dpg.group(horizontal=True):

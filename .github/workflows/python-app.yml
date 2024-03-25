@@ -28,6 +28,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Package app
-      run: |
-        python -m pyinstaller -w --uac-admin --hide-console hide-early main.py
+
+    - name: Package
+      uses: JackMcKew/pyinstaller-action-windows@python3-10-pyinstaller-5-3
+      with:
+        path: .
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: echo
+        path: dist/windows

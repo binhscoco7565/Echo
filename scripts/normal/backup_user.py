@@ -15,7 +15,7 @@ custom_path_used = False
 backup_folder_name = f'backups-{datetime.date.today()}\\'
 
 # Future: Try to implement folder selection for backups, through listbox or checkbox. For now, these 2 folders will be backed up
-copied_folders = ['Downloads', 'Pictures']
+copied_folders = ['Downloads', 'Pictures', 'Documents']
 
 """
 This script uses xcopy to copy folders recursively and includes hidden + system file in its process. Arguments used taken from "xcopy /?"
@@ -32,7 +32,7 @@ This script uses xcopy to copy folders recursively and includes hidden + system 
 def backup(option, custom_path=None):
     dpg.add_text(parent='backup_user_group', default_value='Copying...', tag='backup_alert', color=(255, 255, 0, 255))
     # Checks if custom path exists and is it actually selected
-    if option == "Custom path (Double check Path!)" or not option:
+    if option == 'Custom path (Double check Path!)' or not option:
         if not copied_folders:
             tkinter.messagebox.showinfo('Alert', 'No folders provided. No operation done')
         else:
@@ -47,6 +47,8 @@ def backup(option, custom_path=None):
     else:
         if option == 'Personal Onedrive':
             onedrive_work_path = f'C:\\Users\\{os.getlogin()}\\OneDrive'
+        else:
+            onedrive_work_path = glob.glob(f'{home}OneDrive -*')[0]
         for folder in copied_folders:
             if not os.path.exists(f'{onedrive_work_path}\\{backup_folder_name}{folder}'):
                 os.makedirs(f'{onedrive_work_path}\\{backup_folder_name}{folder}')

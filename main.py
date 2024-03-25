@@ -38,7 +38,6 @@ def main():
             launch_priv.launch_priv()
             backup_user.backup_user()
 
-    dpg_dnd.initialize()
     dpg.create_viewport(title='Echo', width=700, height=800, min_width=600, min_height=250, decorated=True)
     dpg.setup_dearpygui()
 

@@ -16,7 +16,7 @@ def binds():
     def shortcut_operate(operation, user_data):
         if operation:
             try:
-                req.urlretrieve('https://raw.githubusercontent.com/binhscoco7565/echo/main/assets/binds.ahk',
+                req.urlretrieve('https://raw.githubusercontent.com/binhscoco7565/Echo/master/assets/binds.ahk',
                                 'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\binds.ahk')
             except PermissionError as e:
                 tkinter.messagebox.showerror(title='Error', message=str(e))

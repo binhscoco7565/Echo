@@ -9,6 +9,8 @@ import ctypes
 from scripts.elevated import privacy, winutil, binds, backup_time
 from scripts.normal import scoop, launch_priv, backup_user, binds_non
 
+# Import platform status & checks
+import status
 
 dpg.create_context()
 
@@ -26,7 +28,9 @@ def main():
         with dpg.window(label='Echo (admin)', no_resize=True, no_title_bar=False) as main_window:
             # Title & VERY BAD padding (like wtf is this)
             dpg.add_text(f'{art.text2art('Echo', font='big')}')
-            dpg.add_text('Admin enabled\n\n', color=(255, 0, 0))
+            status.status('enabled')
+
+            dpg.add_text('\n')
             # Opens tree node aka "windows" in this context
             winutil.win_util()
             # privacy.privacy()
@@ -34,7 +38,11 @@ def main():
             # backup_time.backup_time()
     else:
         with dpg.window(label='Echo (non-admin)', no_resize=True, no_title_bar=False) as main_window:
-            dpg.add_text(f'{art.text2art('Echo\n\n', font='big')}')
+            dpg.add_text(f'{art.text2art('Echo', font='big')}')
+            status.status('disabled')
+
+            dpg.add_text('\n')
+
             scoop.scoop_window()
             launch_priv.launch_priv()
             backup_user.backup_user()

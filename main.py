@@ -27,7 +27,7 @@ def main():
         print('Running in admin')
         with dpg.window(label='Echo (admin)', no_resize=True, no_title_bar=False) as main_window:
             # Title & VERY BAD padding (like wtf is this)
-            dpg.add_text(f'{art.text2art('Echo', font='big')}')
+            dpg.add_text(art.text2art('Echo', font='big'))
             status.status('enabled')
 
             dpg.add_text('\n')
@@ -38,7 +38,7 @@ def main():
             # backup_time.backup_time()
     else:
         with dpg.window(label='Echo (non-admin)', no_resize=True, no_title_bar=False) as main_window:
-            dpg.add_text(f'{art.text2art('Echo', font='big')}')
+            dpg.add_text(art.text2art('Echo', font='big'))
             status.status('disabled')
 
             dpg.add_text('\n')

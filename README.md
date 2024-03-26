@@ -9,17 +9,17 @@ Check out the [releases](https://github.com/binhscoco7565/Echo/releases) page
 
 ### Build and run
 
-Clone the repository and enter directory:
-```bash
-$ git clone https://github.com/binhscoco7565/echo && cd echo
+In Powershell, clone the repository and enter directory:
+```ps
+git clone https://github.com/binhscoco7565/echo; cd echo
 ```
 Install dependencies
-```bash
-$ pip install -r requirements.txt
+```ps
+pip install -r requirements.txt
 ```
 ...and run the application
-```bash
-$ python main.py
+```ps
+python main.py
 ```
 ### Credits
 This application relies on many other codebases and hard work. Most notably is the work of the community in the library [DearPyGui](https://github.com/hoffstadt/DearPyGui) based on [DearImGui](https://github.com/ocornut/imgui). Without this, this project would've been dead almost immediately. Functionality is also based off of:

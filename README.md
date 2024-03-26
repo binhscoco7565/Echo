@@ -5,7 +5,7 @@ Echo is a basic utility used to launch useful tools for adding/fixing features i
 While the current state of the application is extremely basic at the moment, changes are made often and so you should watch out for any new updates, whether bug fixes or new tools :)
 
 ### Releases
-Check out the [releases](https://github.com/binhscoco7565/Echo/releases) page
+Check out the [releases](https://github.com/tuxy/Echo/releases) page
 
 ### Build and run
 

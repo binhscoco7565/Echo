@@ -7,7 +7,7 @@ import ctypes
 
 # Import windows
 from scripts.elevated import privacy, winutil, binds, backup_time
-from scripts.normal import scoop, launch_priv, backup_user
+from scripts.normal import scoop, launch_priv, backup_user, binds_non
 
 
 dpg.create_context()
@@ -29,15 +29,16 @@ def main():
             dpg.add_text('Admin enabled\n\n', color=(255, 0, 0))
             # Opens tree node aka "windows" in this context
             winutil.win_util()
-            privacy.privacy()
+            # privacy.privacy()
             binds.binds()
-            backup_time.backup_time()
+            # backup_time.backup_time()
     else:
         with dpg.window(label='Echo (non-admin)', no_resize=True, no_title_bar=False) as main_window:
             dpg.add_text(f'{art.text2art('Echo\n\n', font='big')}')
             scoop.scoop_window()
             launch_priv.launch_priv()
             backup_user.backup_user()
+            binds_non.binds_non()
 
     dpg.create_viewport(title='Echo', width=700, height=800, min_width=600, min_height=250, decorated=True)
     dpg.setup_dearpygui()

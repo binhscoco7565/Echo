@@ -30,7 +30,7 @@ def binds_non():
             try:
                 os.remove(bind_path)
             except FileNotFoundError as e:
-                tkinter.messagebox.showerror('Error', e)
+                tkinter.messagebox.showerror('Error', str(e))
 
         dpg.delete_item('installing')
         dpg.configure_item('install_text', default_value=f'Installed: {str(check_installed()).lower()}')
@@ -44,11 +44,10 @@ def binds_non():
             dpg.add_text('          ... plus more')
 
             # Shortcut already installed or not
-            installed_text = dpg.add_text(f'Installed: {str(check_installed()).lower()}', tag='install_text')
+            dpg.add_text(f'Installed: {str(check_installed()).lower()}', tag='install_text')
             # Don't know why I'm doing this, logic doesn't make sense
 
         with dpg.group(horizontal=True):
             dpg.add_button(label='Source')
-            dpg.add_button(label='Download and make run on startup',
-                           callback=lambda: shortcut_operate(True))
+            dpg.add_button(label='Download and make run on startup', callback=lambda: shortcut_operate(True))
             dpg.add_button(label='Remove', callback=lambda: shortcut_operate(False))

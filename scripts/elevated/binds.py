@@ -10,10 +10,7 @@ bind_path = 'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\
 def binds():
     # Checks which operation is being done and return the correct state for each
     def check_installed():
-        if os.path.exists(bind_path):
-            return True
-        else:
-            return False
+        return os.path.exists(bind_path)
 
     def shortcut_operate(operation, user_data):
         if operation:

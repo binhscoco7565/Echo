@@ -31,10 +31,10 @@ jobs:
 
     - name: Package app
       run: |
-        pyinstaller --onefile --distpath . main.py
+        pyinstaller --onefile main.py
         
 
     - uses: actions/upload-artifact@v4
       with:
         name: echo
-        path: ./main.exe
+        path: ./dist/main.exe

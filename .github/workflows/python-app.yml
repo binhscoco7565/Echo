@@ -29,12 +29,12 @@ jobs:
         pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Package
-      uses: JackMcKew/pyinstaller-action-windows@main
-      with:
-        path: .
+    - name: Package app
+      run: |
+        pyinstaller --onefile main.spec
+        
 
     - uses: actions/upload-artifact@v4
       with:
         name: echo
-        path: dist/windows
+        path: dist/main.exe

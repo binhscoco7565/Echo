@@ -37,4 +37,4 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: echo
-        path: dist/windows/main.exe
+        path: dist/main/main.exe

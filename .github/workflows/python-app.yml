@@ -15,7 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -26,8 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements.txt
 
     - name: Package app
       run: |
@@ -37,4 +36,4 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: echo
-        path: ./dist/
+        path: ./dist/main.exe

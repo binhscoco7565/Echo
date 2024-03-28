@@ -29,9 +29,17 @@ jobs:
         pip install -r requirements.txt
         pip install nuitka
 
+    - name: Install UPX
+      uses: crazy-max/ghaction-upx@v3
+      with:
+        install-only: true
+
+    - name: UPX Status
+      run: upx --version
+
     - name: Package app (nuitka)
       run: |
-        nuitka --follow-imports --onefile --assume-yes-for-downloads main.py
+        nuitka --onefile --assume-yes-for-downloads --plugin-enable=upx main.py
         
 
     - uses: actions/upload-artifact@v4

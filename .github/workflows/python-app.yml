@@ -39,7 +39,7 @@ jobs:
 
     - name: Package app (nuitka)
       run: |
-        nuitka --follow-imports --onefile --assume-yes-for-downloads --plugin-enable=upx cmain.py
+        nuitka --follow-imports --onefile --assume-yes-for-downloads --plugin-enable=upx main.py
         
 
     - uses: actions/upload-artifact@v4

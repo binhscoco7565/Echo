@@ -27,13 +27,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install nuitka
 
-    - name: Package app
+    - name: Package app (nuitka)
       run: |
-        pyinstaller --onefile main.py
+        nuitka --follow-imports --onefile --assume-yes-for-downloads main.py
         
 
     - uses: actions/upload-artifact@v4
       with:
         name: echo
-        path: ./dist/main.exe
+        path: ./main.exe

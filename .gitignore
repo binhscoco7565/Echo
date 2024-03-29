@@ -1,4 +1,8 @@
 /dist/
 /build/
 /.idea/
+/upx/
+/main.build/
+/main.dist/
+/main.onefile-build/
 demo.py
